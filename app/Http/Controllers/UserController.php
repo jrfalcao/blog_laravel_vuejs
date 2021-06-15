@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class User extends Controller
+use App\Models\User;
+
+class UserController extends Controller
 {
     public function getUserByID(Request $request)
     {

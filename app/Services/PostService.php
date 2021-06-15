@@ -3,12 +3,16 @@
 namespace App\Services;
 
 use App\Models\Post;
+use DB;
 
 class PostService
 {
     public function getAll()
     {
-        return Post::paginate(3);
+        return Post::select('id', 'title', 'status', 'user_id', 
+                            'created_at', 'updated_at')
+                    ->selectRaw('LEFT(content, 500) as content')        
+                    ->paginate(3);
     }
     
     public function getById($id)

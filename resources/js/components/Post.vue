@@ -1,9 +1,9 @@
 <template>
   <div class="post">
-    <h2>Collapsible Sidebar Using Bootstrap 4</h2>
-    <p class="text-muted h6">-- criado por: {{ this.author.name }} || Em 13/06/2021</p>
+    <h2>{{ this.post_item.title }}</h2>
+    <p class="text-muted h6">-- criado por: {{ this.author.name }} || Em {{ this.created_at }}</p>
 
-    <p class="content_post" v-html="this.post_item.content">{{ this.post_item.content }}</p>
+    <p maxlength="10" class="content_post" v-html="this.post_item.content">{{ this.post_item.content }}</p>
     
     <div class="butons d-flex justify-content-end">
       <a :href="url" class="btn btn-primary btn-sm">Ver/Editar</a>
@@ -22,7 +22,8 @@
     data: () => ({
       post_item: '',
       url: '',
-      author: ''
+      author: '',
+      created_at: ''
     }),
     methods: {
       async setAuthor() {
@@ -31,6 +32,8 @@
           return response.data
         })
         this.author = author
+        const created_at = this.post_item.created_at.split('T')
+        this.created_at = created_at[0].split('-').reverse().join('/')
       }
     },
     mounted() {

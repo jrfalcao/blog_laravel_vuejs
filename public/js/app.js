@@ -2369,7 +2369,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       post_item: '',
       url: '',
-      author: ''
+      author: '',
+      created_at: ''
     };
   },
   methods: {
@@ -2377,7 +2378,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        var author;
+        var author, created_at;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -2392,8 +2393,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 2:
                 author = _context.sent;
                 _this.author = author;
+                created_at = _this.post_item.created_at.split('T');
+                _this.created_at = created_at[0].split('-').reverse().join('/');
 
-              case 4:
+              case 6:
               case "end":
                 return _context.stop();
             }
@@ -42297,16 +42300,22 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "post" }, [
-    _c("h2", [_vm._v("Collapsible Sidebar Using Bootstrap 4")]),
+    _c("h2", [_vm._v(_vm._s(this.post_item.title))]),
     _vm._v(" "),
     _c("p", { staticClass: "text-muted h6" }, [
-      _vm._v("-- criado por: " + _vm._s(this.author.name) + " || Em 13/06/2021")
+      _vm._v(
+        "-- criado por: " +
+          _vm._s(this.author.name) +
+          " || Em " +
+          _vm._s(this.created_at)
+      )
     ]),
     _vm._v(" "),
     _c(
       "p",
       {
         staticClass: "content_post",
+        attrs: { maxlength: "10" },
         domProps: { innerHTML: _vm._s(this.post_item.content) }
       },
       [_vm._v(_vm._s(this.post_item.content))]

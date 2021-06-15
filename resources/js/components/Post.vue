@@ -17,7 +17,7 @@
   export default {
     name: "Post",
     props: {
-      post: String,
+      post: String
     },
     data: () => ({
       post_item: '',

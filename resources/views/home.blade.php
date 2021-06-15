@@ -9,26 +9,20 @@
 
         <div class="container-fluid">
             @foreach ($posts as $item)
-                <Post post="{{ json_encode($item) }}" />               
+                {{--  --}}
+                <p><Post post="{{ json_encode($item) }}" /></p>
             @endforeach
-            {{-- <div class="post">
-                <h2>Collapsible Sidebar Using Bootstrap 4</h2>
-                <p class="text-muted h6">-- criado por: Junior Falcão || Em 13/06/2021</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                
-                <div class="butons d-flex justify-content-end">
-                    <a href="" class="btn btn-primary btn-sm">Ver/Editar</a>
-                    <button class="btn btn-danger btn-sm ml-2 post_delete">Excluir</button>
+            
+            <div class="col-12">
+                <div class="d-flex justify-content-center mt-4">
+                    {{ $posts->links() }}
                 </div>
-                <div class="line"></div>
-            </div> --}}
-
-            {{ $posts->links() }}
+            </div>
 
         </div>
 
     </div>
+    <Footer></Footer>
 @endsection
 
 @section('javascript')

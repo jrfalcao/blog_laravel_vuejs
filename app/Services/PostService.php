@@ -9,8 +9,7 @@ class PostService
 {
     public function getAll()
     {
-        return Post::select('id', 'title', 'status', 'user_id', 
-                            'created_at', 'updated_at')
+        return Post::select('id', 'title', 'status', 'user_id', 'created_at', 'updated_at')
                     ->selectRaw('LEFT(content, 500) as content')        
                     ->paginate(3);
     }

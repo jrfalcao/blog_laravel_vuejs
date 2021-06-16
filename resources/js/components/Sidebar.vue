@@ -1,7 +1,7 @@
 <template>
   <nav id="sidebar">
-    <div class="sidebar-header">
-      <h3>Bootstrap Sidebar</h3>
+    <div class="sidebar-header text-center">
+      <h3>LOGO</h3>
     </div>
 
     <ul class="list-unstyled components">

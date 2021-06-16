@@ -30,7 +30,7 @@
     props: {
       itens: String,
     },
-  };
+  }
 </script>
 
 <style>

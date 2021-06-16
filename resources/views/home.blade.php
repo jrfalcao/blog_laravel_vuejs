@@ -22,7 +22,6 @@
         </div>
 
     </div>
-    <Footer></Footer>
 @endsection
 
 @section('javascript')

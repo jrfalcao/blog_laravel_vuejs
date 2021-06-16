@@ -2,6 +2,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
+    position: relative;
 }
 
 p {
@@ -89,6 +90,7 @@ a.article:hover {
 #content {
     width: 100%;
     min-height: 100vh;
+    margin-bottom: 50px;
     transition: all 0.3s;
 }
 
@@ -106,4 +108,10 @@ a.article:hover {
     #sidebarCollapse span {
         display: none;
     }
+}
+
+.footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
 }
